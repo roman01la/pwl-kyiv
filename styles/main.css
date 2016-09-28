@@ -1,16 +1,32 @@
 body {
   margin: 0;
-  font: normal 16px 'Times New Roman';
-  color: #000000;
+  font: normal 16px 'Crimson Text', 'Times New Roman', serif;
+  color: #161616;
+}
+
+a {
+  color: #161616;
+}
+
+p {
+  margin: 10px 0;
 }
 
 h1 {
   font-weight: 400;
   font-size: 3em;
+  margin: 10px 0;
 }
 
 h2 {
   font-size: 2.4em;
+}
+
+.page-header,
+.content,
+.page-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .page-header {
@@ -24,52 +40,90 @@ h2 {
 
 .contents {
   text-align: left;
-  max-width: 320px;
+  max-width: 420px;
   margin: 0 auto;
 }
 
 .contents h2 {
-  margin: 100px 0 40px;
+  margin: 60px 0 20px;
+}
+
+.contents > .list {
+  margin: 0;
 }
 
 .list {
   margin: 0 0 0 22px;
   padding: 0;
+  counter-reset: item;
+}
+
+.list h3 {
+  display: inline-block;
+  margin: 2px 0;
 }
 
 .list li {
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin: 6px 0;
+  display: block;
+  overflow-x: hidden;
 }
 
 .list li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+  margin: 0 8px 0 0;
+}
+
+.list .chapter:before {
+  font-weight: bold;
+  font-size: 21px;
+  margin: 0 8px 0 0;
+}
+
+.list .speaker:after {
   float: left;
   width: 0;
+  position: relative;
+  left: 40px;
   white-space: nowrap;
   content:
    ". . . . . . . . . . . . . . . . . . . . "
-   ". . . . . . . .";
+   ". . . . . . . . . . . . . . . . .";
 }
 
-.list .speaker {
+.list .speaker .name {
   padding: 0 8px 0 0;
   background: white;
+  position: relative;
+  z-index: 1;
 }
 
 .list time {
   float: right;
   padding: 0 0 0 8px;
   background: white;
+  position: relative;
+  z-index: 1;
 }
 
 .info {
   text-align: center;
-  margin: 100px 0 0;
+  margin: 30px 0 0;
 }
 
 .page-footer {
   text-align: center;
-  margin: 40px 0 0;
+  margin: 50px 0 0;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transform-origin: 0 0;
 }
 
 @media (max-width: 440px) {
