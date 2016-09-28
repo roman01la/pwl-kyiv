@@ -3,12 +3,15 @@
 
   const PIXEL_RATIO = global.devicePixelRatio;
 
-  const WIDTH = global.innerWidth * PIXEL_RATIO;
-  const HEIGHT = global.innerHeight * PIXEL_RATIO;
+  const W_WIDTH = global.innerWidth;
+  const W_HEIGHT = global.innerHeight;
+
+  const WIDTH = W_WIDTH * PIXEL_RATIO;
+  const HEIGHT = W_HEIGHT * PIXEL_RATIO;
 
   const BLACK = 0x000000;
 
-  const NUM_OF_DOTS = 14;
+  const NUM_OF_DOTS = Math.floor(W_WIDTH / (1280 / 14));
 
   const MIN_R = 0.5;
   const MAX_R = 2.5;
@@ -31,7 +34,17 @@
            ctx);
        });
 
-  drawDirtStroke(0.5, 1.7, WIDTH, 80);
+  if (W_WIDTH >= 800) {
+    drawDirtStroke(0, 0, 0.5, 2, 300, HEIGHT);
+  }
+
+  function drawDirtStroke(x, y, min, max, w, h) {
+    for (let i = 0; i < w; i += max * 26) {
+      for (let j = 0; j < h; j += max * 8) {
+        drawDot(x + i * Math.sin(i), y + j * Math.sin(i), getRandomInt(min, max), BLACK, ctx);
+      }
+    }
+  }
 
   function drawDot(x, y, r, color, ctx) {
     ctx.fillColor = color;
@@ -39,16 +52,6 @@
     ctx.arc(x, y, r, Math.PI * 2, false);
     ctx.closePath();
     ctx.fill();
-  }
-
-  function drawDirtStroke(min, max, w, h) {
-    for (let i = 0; i < h; i += max * Math.random() * 10) {
-      for (let j = 0; j < w; j += max * Math.random() * 60) {
-        if (Math.sin(j) > 0) {
-          drawDot(i, j, getRandomInt(min, max), BLACK, ctx);
-        }
-      }
-    }
   }
 
   function getRandomInt(min, max) {
