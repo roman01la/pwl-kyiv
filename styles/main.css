@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font: normal 16px 'Times New Roman';
+  color: #000000;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.4em;
+}
+
+.page-header {
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.content {
+
+}
+
+.contents {
+  text-align: left;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.contents h2 {
+  margin: 100px 0 40px;
+}
+
+.list {
+  margin: 0 0 0 22px;
+  padding: 0;
+}
+
+.list li {
+  font-size: 1.2em;
+  margin: 6px 0;
+}
+
+.list li:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content:
+   ". . . . . . . . . . . . . . . . . . . . "
+   ". . . . . . . .";
+}
+
+.list .speaker {
+  padding: 0 8px 0 0;
+  background: white;
+}
+
+.list time {
+  float: right;
+  padding: 0 0 0 8px;
+  background: white;
+}
+
+.info {
+  text-align: center;
+  margin: 100px 0 0;
+}
+
+.page-footer {
+  text-align: center;
+  margin: 40px 0 0;
+}
+
+@media (max-width: 440px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+}
