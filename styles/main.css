@@ -10,6 +10,7 @@ a {
 
 p {
   margin: 10px 0;
+  font-size: 16px;
 }
 
 h1 {
@@ -36,6 +37,11 @@ h2 {
 
 .content {
   padding: 0 10px 0 20px;
+}
+
+.intro {
+  max-width: 900px;
+  margin: 120px auto;
 }
 
 .contents {
