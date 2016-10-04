@@ -12,7 +12,6 @@
   const BLACK = 0x000000;
 
   const NUM_OF_DOTS = Math.floor(W_WIDTH / (1280 / 4));
-  console.log(NUM_OF_DOTS);
 
   const MIN_R = 0.5;
   const MAX_R = 2.5;
