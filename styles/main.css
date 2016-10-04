@@ -23,6 +23,11 @@ h2 {
   font-size: 2.4em;
 }
 
+.register {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
 .page-header,
 .content,
 .page-footer {
