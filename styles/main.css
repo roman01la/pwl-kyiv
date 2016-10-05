@@ -44,7 +44,8 @@ h2 {
   padding: 0 10px 0 20px;
 }
 
-.intro {
+.intro,
+.speakers {
   max-width: 900px;
   margin: 120px auto;
 }
